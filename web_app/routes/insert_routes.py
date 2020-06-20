@@ -1,4 +1,5 @@
-from flask import Flask, Blueprint
+from flask import Flask, Blueprint, render_template
+from web_app.models import upload_leafly_data
 # from flask import Blueprint
 # from flask_sqlalchemy import SQLAlchemy
 # from flask_migrate import Migrate
@@ -6,7 +7,7 @@ from flask import Flask, Blueprint
 # import psycopg2
 # from psycopg2.extras import DictCursor
 # # import pandas
-# import os
+import os
 
 # from dotenv import load_dotenv
 # load_dotenv()
@@ -29,4 +30,6 @@ def index():
 
 @insert_routes.route("/insert_leafly")
 def leafly_db():
+    upload_leafly_data()
+    
     return ('Successfly Inserted CSV to Database')

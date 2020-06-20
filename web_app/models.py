@@ -1,8 +1,18 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+# from sqlalchemy import create_engine
+# import psycopg2
+# from psycopg2.extras import DictCursor
+# import os
+# import pandas as pd
 
 db = SQLAlchemy()
 migrate = Migrate()
+
+# DB_URL = os.getenv("DB_URL")
+# connection = psycopg2.connect(DB_URL)
+# cursor = connection.cursor(cursor_factory=DictCursor)
+# engine = create_engine(SQL_URL)
 
 class Strains(db.Model):
     strain_id = db.Column(db.Integer, primary_key=True)
@@ -15,6 +25,16 @@ class Strains(db.Model):
     
     # def __repr__(self):
         # return jsonify(UserData)
+
+def upload_leafly_data():
+
+    print("TODO")
+    # DB_FILEPATH = os.path.join(os.path.dirname(__file__), "cannabis.csv")
+    # df = pd.read_csv(DB_FILEPATH)
+    # df.to_sql('leafly', engine, if_exists='replace', index=False)
+    # connection.commit()
+
+    # connection.close()
 
 def parse_records(database_records):
     """
