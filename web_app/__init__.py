@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-from web_app.models import db
+from web_app.model import db
 from web_app.routes.insert_routes import insert_routes
 from flask_migrate import Migrate
 

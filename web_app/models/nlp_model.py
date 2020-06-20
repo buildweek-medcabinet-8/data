@@ -9,7 +9,7 @@ class Predictor():
 
     def predict(self,user_text,size=5): 
         # Create Vector 
-        request = self.tfidf.transform([user_text])
+        request = self.tfidf.transform(user_text)
         # Use knn model to calculate the top n strains 
         strain_ids = self.nn.kneighbors(request.todense(), n_neighbors=size)[1][0]
         return strain_ids

@@ -1,32 +1,33 @@
-from flask import Flask, Blueprint, render_template
-from web_app.models import upload_leafly_data
-# from flask import Blueprint
-# from flask_sqlalchemy import SQLAlchemy
-# from flask_migrate import Migrate
-# from sqlalchemy import create_engine
-# import psycopg2
-# from psycopg2.extras import DictCursor
-# # import pandas
-import os
-
-# from dotenv import load_dotenv
-# load_dotenv()
-# DB_NAME = os.getenv("DB_NAME")
-# DB_USER = os.getenv("DB_USER")
-# DB_PASS = os.getenv("DB_PASS")
-# DB_HOST = os.getenv("DB_HOST")
-# SQL_URL = os.getenv("SQL_URL")
-# DB_NAME = 'cyarxgrz'
-# DB_USER = 'cyarxgrz'
-# DB_PASS = '2QQLDECBgrYioavOEavWO5X2Uv3VGu5A'
-# DB_HOST = 'ruby.db.elephantsql.com'
-# SQL_URL = 'postgres://cyarxgrz:2QQLDECBgrYioavOEavWO5X2Uv3VGu5A@ruby.db.elephantsql.com:5432/cyarxgrz'
+from flask import Flask, Blueprint, render_template, request
+from web_app.model import upload_leafly_data
+from web_app.models import nlp_model 
+# from nlp_model import Predictions
 
 insert_routes = Blueprint("insert_routes", __name__)
+
+predictor = nlp_model.Predictor()
 
 @insert_routes.route("/")
 def index():
     return render_template("home.html")
+
+@insert_routes.route("/user_data")
+def get_data():
+    return render_template('effects_flavors.html')
+
+@insert_routes.route("/print_data", methods=["POST"])
+def display_data():
+    # converts data from from into a dictionary
+    data = dict(request.form)
+
+    # extracts the list of flavors and effects from the dictionary
+    user_data = data['Flavors/Effects'].split(sep=',')
+    # you can pass user_data to ruby's model
+    data = predictor.predict(user_data)
+    print(type(data))
+    # breakpoint()
+    print(data)
+    return "TODO"
 
 @insert_routes.route("/insert_leafly")
 def leafly_db():
