@@ -94,5 +94,4 @@ def display_data():
     print("--------------------")
     connect_db.cursor.close()
     connect_db.connection.close()
-
     return jsonify(parser(query_result))
