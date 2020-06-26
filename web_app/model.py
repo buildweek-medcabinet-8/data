@@ -6,16 +6,6 @@ import os
 db = SQLAlchemy()
 migrate = Migrate()
 
-class Strains(db.Model):
-    strain_id = db.Column(db.Integer, primary_key=True)
-    strain = db.Column(db.String(128))
-    strain_type = db.Column(db.String(128))
-    rating = db.Column(db.Integer)
-    effects = db.Column(db.String(128))
-    flavor = db.Column(db.String(128))
-    description = db.Column(db.String(128))
-
-
 class UserData(db.Model):
     User_id = db.Column(db.Integer, primary_key=True)
     User = db.Column(db.String(128))
