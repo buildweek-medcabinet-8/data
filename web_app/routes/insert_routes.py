@@ -5,7 +5,7 @@ from web_app.model import parse_records, db, db_to_leafly, get_recommendations, 
 
 insert_routes = Blueprint("insert_routes", __name__)
 
-@insert_routes.route("/insert_leafly")
+@insert_routes.route("/db_connect")
 def insert_leafly():
     strain = dict(db_to_leafly())
     
