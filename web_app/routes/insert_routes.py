@@ -11,22 +11,12 @@ def insert_leafly():
     
     return jsonify(strain)
 
-@insert_routes.route("/get_leafly")
-def get_leafly():
-    db_to_leafly()
-    return jsonify(parser(query_result))
-
 @insert_routes.route("/user_data")
 def get_data():
     return render_template('effects_flavors.html')
 
 @insert_routes.route("/recommend", methods=["POST"])
 def display_data():
-    # Select data from dictionary
-
-    # data = request.get_json()
-    # user_data = request_json.get('Flavors/Effects')
-    # value2           = request_json.get('Last_Name')
 
     user_data = request.form['Flavors/Effects']
     print("RAW USER DATA TYPE:", type(user_data))
