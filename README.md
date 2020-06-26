@@ -1,5 +1,5 @@
 # MedCabinet # 
-Application which recommends strains of medical marijuana based off of the desired flavors and effects for patients trying to get of pharmaceuticals.
+This project is our contribution to a "build week" at Lambda School. We are part of team of student data scientists and software engineers at Lambda School who have collaborated to create an online application. This application permits users to input their desired qualities in marijuana products, and the application returns a set of recommended strains of marijuana. In our roles as data and machine learning engineers, we have constructed an online API which returns a set of recommened strains of marijuana, given user preferences
 
 - - - -
 
@@ -14,8 +14,10 @@ pipenv install
 - - - -
 
 ## Usage ## 
-Receives form-data with key of Flavors/Effects that contains a string,  
-Sends form-data to https://medcabinet-v2.herokuapp.com/recommend which returns the top 5 suggested strains based off of user input. 
+The API performs the following three functions in order.
+1. The API receives a string from an external server. The string contains a list of words and sentences describing the effects, flavors, and general description of what type of marijuana a customer is looking for.
+2. The string is passed into a natural language processing algorithm (NLP). This algorithm was previously fitted onto a dataset of several thousand strains; it includes each strain's type, rating, flavor, effects, and general description.
+3. The NLP algorithm returns the top five strains most compatible with the inputted string. Finally, the API returns this information as a JSON file.
 
 - - - -
 
