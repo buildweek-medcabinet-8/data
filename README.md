@@ -14,7 +14,7 @@ pipenv install
 - - - -
 
 ## Usage ## 
-The API performs the following four functions in order. The url to handle 
+The API performs the following four functions in order.
 1. The API receives a string from an external server. The string contains a list of words and sentences describing the effects, flavors, and general description of what type of marijuana a customer is looking for.
 2. The string is received in the format of form-data sent with a key named Flavors/Effects, to the endpoint https://medcabinet-ds.herokuapp.com/recommend
 3. The string is passed into a natural language processing algorithm (NLP). This algorithm was previously fitted onto a dataset of several thousand strains; it includes each strain's type, rating, flavor, effects, and general description.
