@@ -37,7 +37,7 @@ Alternatively, the API can be accessed using a software called [Postman](https:/
 8. Click Send
 9. The software will send a Post request with the entered Flavors/Effects to the API, which returns a JSON with top five matching strains.
 The following screenshot of [Postman](https://www.postman.com/) highlights the main elements of the software which you will need to use.
-[Postman Screenshot](/Postman Example Screenshot.PNG)
+![Postman Screenshot](/postman_example.png)
 10. Enjoy!
 
 - - - -
