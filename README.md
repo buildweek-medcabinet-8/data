@@ -1,6 +1,7 @@
 # MedCabinet # 
-This project is our contribution to a "build week" at Lambda School. We are part of team of student data scientists and software engineers at Lambda School who have collaborated to create an online application. This application permits users to input their desired qualities in marijuana products, and the application returns a set of recommended strains of marijuana. In our roles as data and machine learning engineers, we have constructed an online API which returns a set of recommened strains of marijuana, given user preferences
+This project is our contribution to a "build week" at Lambda School. We are part of team of student data scientists and software engineers at Lambda School who have collaborated to create an online application. This application permits users to input their desired qualities in marijuana products, and the application returns a set of recommended strains of marijuana. In our roles as data and machine learning engineers, we have constructed an online API which returns a set of recommened strains of marijuana, given user preferences.
 
+The online Med-Cabinet app can be accessed [here](https://med-cabinet8.netlify.app/).
 - - - -
 
 ## Installation ## 
